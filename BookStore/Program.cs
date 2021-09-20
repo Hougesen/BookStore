@@ -10,7 +10,7 @@ namespace BookStore
         {
             Inventory inventory = new Inventory();
 
-            // Simple cli program that automatically start again when action is done
+            // Quick and dirty cli program that automatically start again when action is done
             bool exitedProgram = false;
             while (!exitedProgram)
             {
@@ -40,7 +40,6 @@ namespace BookStore
                 if (selectedOption == "s")
                 {
                     // Search for publication
-
                     ConsoleWrapper("Write is the title of the publication you want to search for");
                     string title = Console.ReadLine();
 
@@ -61,9 +60,9 @@ namespace BookStore
                 else if (selectedOption == "a")
                 {
                     // Add new publication
-
                     bool validType = false;
                     string newPubType = "";
+
                     while (!validType)
                     {
                         ConsoleWrapper("What kind of publication? \n book \n newspaper");
@@ -161,6 +160,7 @@ namespace BookStore
             }
         }
 
+        // Simple wrapper to minimize amount of code
         public static void ConsoleWrapper(string text)
         {
             Console.Clear();
