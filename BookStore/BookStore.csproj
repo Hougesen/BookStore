@@ -5,4 +5,12 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\madsh\source\repos\BookStore\BookStore\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\madsh\source\repos\BookStore\BookStore\.editorconfig" />
+  </ItemGroup>
+
 </Project>

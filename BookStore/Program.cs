@@ -1,4 +1,4 @@
-﻿using System;
+﻿using BookStore.Models;
 
 namespace BookStore
 {
@@ -6,7 +6,12 @@ namespace BookStore
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var inventory = new Inventory();
+
+            // inventory.ListInventory(); // List all publications
+            // inventory.ListInventory("books"); // List all books
+            // inventory.ListInventory("newspapers"); // List all newspapers
+
         }
     }
 }
