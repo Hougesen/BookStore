@@ -66,9 +66,9 @@ namespace BookStore.Controllers
             {
                 ListBookInventory();
             }
-            else if (type == "newspaper")
+            else if (type == "newspapers")
             {
-                ListBookInventory();
+                ListNewspaperInventory();
             }
             else
             {
