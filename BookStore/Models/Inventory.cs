@@ -119,7 +119,7 @@ namespace BookStore.Models
 
         public void SearchBooks(string title)
         {
-            var result = Books.FindAll(b => b.Title.ToLower().Contains(title));
+            List<Book> result = Books.FindAll(b => b.Title.ToLower().Contains(title));
 
             if (result.Count > 0)
             {
@@ -136,7 +136,7 @@ namespace BookStore.Models
 
         public void SearchNewspapers(string title)
         {
-            var result = Newspapers.FindAll(n => n.Title.ToLower().Contains(title));
+            List<Newspaper> result = Newspapers.FindAll(n => n.Title.ToLower().Contains(title));
 
             if (result.Count > 0)
             {
