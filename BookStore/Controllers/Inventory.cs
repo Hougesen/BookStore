@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using BookStore.Models;
 
-namespace BookStore.Models
+namespace BookStore.Controllers
 {
     public class Inventory
     {
@@ -125,7 +126,7 @@ namespace BookStore.Models
             {
                 foreach (Book book in result)
                 {
-                    Console.WriteLine($"Found book: {book.Title} by {book.Author}. ISBN: {book.Isbn}");
+                    Console.WriteLine($"Found book: {book.Title} by {book.Author}");
                 }
             }
             else
@@ -150,5 +151,7 @@ namespace BookStore.Models
                 Console.WriteLine("Found no newspapers that include that title");
             }
         }
+
+
     }
 }
