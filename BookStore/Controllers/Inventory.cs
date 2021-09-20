@@ -152,6 +152,34 @@ namespace BookStore.Controllers
             }
         }
 
+        public void AddBook(string title, string author, string publisher, decimal price, int isbn)
+        {
+            Book newBook = new Book
+            {
+                Id = Books.Count + 1,
+                Title = title,
+                Author = author,
+                Publisher = publisher,
+                Price = price,
+                Isbn = isbn
+            };
+
+            Books.Add(newBook);
+        }
+
+        public void AddNewspaper(string title, string publisher, decimal price, int pages)
+        {
+            Newspaper newNewspaper = new Newspaper
+            {
+                Id = Newspapers.Count + 1,
+                Title = title,
+                Publisher = publisher,
+                Price = price,
+                Pages = pages
+            };
+
+            Newspapers.Add(newNewspaper);
+        }
 
     }
 }
