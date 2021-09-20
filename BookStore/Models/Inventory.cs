@@ -97,6 +97,58 @@ namespace BookStore.Models
             }
         }
 
+        public void Search(string title, string type = null)
+        {
+            title = title.Trim().ToLower();
 
+            if (type == "book")
+            {
+                SearchBooks(title);
+            }
+            else if (type == "newspaper")
+            {
+                SearchNewspapers(title);
+            }
+            else
+            {
+                SearchBooks(title);
+                SearchNewspapers(title);
+            }
+
+        }
+
+        public void SearchBooks(string title)
+        {
+            var result = Books.FindAll(b => b.Title.ToLower().Contains(title));
+
+            if (result.Count > 0)
+            {
+                foreach (Book book in result)
+                {
+                    Console.WriteLine($"Found book: {book.Title} by {book.Author}. ISBN: {book.Isbn}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Found no books that include that title");
+            }
+        }
+
+        public void SearchNewspapers(string title)
+        {
+            var result = Newspapers.FindAll(n => n.Title.ToLower().Contains(title));
+
+            if (result.Count > 0)
+            {
+                foreach (Newspaper newspaper in result)
+                {
+                    Console.WriteLine($"Found newspaper: {newspaper.Title}, published {newspaper.Date}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Found no newspapers that include that title");
+            }
+        }
     }
 }
